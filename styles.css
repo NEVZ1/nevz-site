@@ -1,0 +1,464 @@
+:root {
+  --bg: #060606;
+  --surface: #101215;
+  --surface-soft: #151920;
+  --text: #f5f5f5;
+  --muted: #bcbcbc;
+  --line: #2d3440;
+  --line-strong: #5d6f86;
+  --accent: #d6ecff;
+  --max-width: 980px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background:
+    radial-gradient(circle at 12% 8%, #121820 0%, transparent 32%),
+    radial-gradient(circle at 86% 0%, #161e28 0%, transparent 27%),
+    linear-gradient(180deg, #07080b 0%, #060606 100%);
+  color: var(--text);
+  font-family: "Sora", "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+img,
+iframe {
+  max-width: 100%;
+  display: block;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: #fff;
+  color: #000;
+  padding: 0.5rem 0.75rem;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 999;
+}
+
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: relative;
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(6, 6, 8, 0.22) 0%, rgba(6, 6, 8, 0.38) 72%),
+    url("./assets/header-bg.png");
+  background-size: cover, cover;
+  background-position: center, center;
+}
+
+.site-header::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.5;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  padding: 4.8rem 0 2.2rem;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  color: #c7d0df;
+}
+
+.hero h1 {
+  margin: 0.25rem 0 0;
+  font-family: "Sora", "Avenir Next", Avenir, sans-serif;
+  font-size: clamp(3rem, 11vw, 6.2rem);
+  letter-spacing: 0.22em;
+  line-height: 0.92;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0 0 18px rgba(214, 236, 255, 0.14);
+}
+
+.supporting-line {
+  margin: 0.7rem 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  color: #dce7f7;
+}
+
+.hero-text {
+  margin: 0.55rem 0 1rem;
+  max-width: 58ch;
+  font-size: clamp(1.02rem, 2.2vw, 1.12rem);
+}
+
+.hero-identity {
+  margin-top: 0.9rem;
+  padding: 0.5rem 0.65rem;
+  max-width: 44ch;
+  font-size: clamp(1.08rem, 2.6vw, 1.34rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #f6fbff;
+  border: 1px solid var(--line-strong);
+  background: rgba(214, 236, 255, 0.08);
+}
+
+.evidence-strip {
+  list-style: none;
+  margin: 0 0 1.2rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.evidence-strip li {
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--line-strong);
+  color: #eaf4ff;
+  background: rgba(173, 204, 237, 0.08);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.main-content {
+  padding: 2rem 0 0;
+}
+
+.section {
+  margin: 0 0 1.15rem;
+  padding: 1.35rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: inset 0 0 0 1px rgba(214, 236, 255, 0.04);
+}
+
+.section h2 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #e1eeff;
+}
+
+.release-card {
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  padding: 1rem;
+  position: relative;
+}
+
+.release-card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 34px;
+  height: 34px;
+  border-top: 1px solid var(--accent);
+  border-left: 1px solid var(--accent);
+  opacity: 0.6;
+}
+
+.release-card + .release-card {
+  margin-top: 0.95rem;
+}
+
+.release-head {
+  display: grid;
+  grid-template-columns: 1fr 170px;
+  gap: 1rem;
+  align-items: start;
+}
+
+.release-head h3 {
+  margin: 0;
+  font-family: "Sora", "Avenir Next", Avenir, sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.release-meta {
+  margin: 0.4rem 0 0;
+  color: #c9d5e6;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.cover {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border: 1px solid var(--line-strong);
+}
+
+.embed-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.embed-grid.single {
+  grid-template-columns: 1fr;
+  max-width: 520px;
+}
+
+.embed-label {
+  margin: 0 0 0.35rem;
+  color: #dce9fb;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.production-proof {
+  margin: 0.55rem 0 0;
+  color: #d8e6fa;
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+}
+
+.production-songs-label {
+  margin: 0.6rem 0 0.25rem;
+  color: #e6f1ff;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.production-songs {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #d2dff1;
+}
+
+.production-songs li + li {
+  margin-top: 0.15rem;
+}
+
+.upcoming-card {
+  padding: 1rem;
+}
+
+.upcoming-layout {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.95rem;
+  align-items: center;
+}
+
+.upcoming-cover {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 1px solid var(--line-strong);
+}
+
+.upcoming-track {
+  margin: 0 0 0.35rem;
+  font-family: "Sora", "Avenir Next", Avenir, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.upcoming-meta {
+  margin: 0;
+  color: #d7e4f7;
+  font-size: 0.85rem;
+}
+
+.upcoming-meta-small {
+  margin: 0.28rem 0 0;
+  color: #abbcd3;
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.upcoming-proof {
+  margin: 0.5rem 0 0;
+  color: #c9d8eb;
+  font-size: 0.79rem;
+}
+
+.merch-proof {
+  margin: 0 0 0.85rem;
+  color: #dce9fb;
+  font-size: 0.9rem;
+}
+
+.merch-proof-strong {
+  font-weight: 600;
+}
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.merch-item {
+  border: 1px solid var(--line-strong);
+  background: rgba(214, 236, 255, 0.04);
+  padding: 0.8rem;
+}
+
+.merch-item h3 {
+  margin: 0;
+  font-family: "Sora", "Avenir Next", Avenir, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.merch-item p {
+  margin: 0.4rem 0 0;
+  color: #c9d8eb;
+  font-size: 0.85rem;
+}
+
+.merch-media {
+  width: 100%;
+  margin-top: 0.55rem;
+  border: 1px solid var(--line-strong);
+  background: #000;
+}
+
+.merch-note {
+  margin: 0.75rem 0 0;
+  color: #aebed2;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+iframe {
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+  background: #000;
+}
+
+.youtube-preview {
+  display: block;
+  text-decoration: none;
+  border: 1px solid var(--line-strong);
+  background: #0b0e13;
+}
+
+.youtube-preview img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.youtube-preview span {
+  display: block;
+  padding: 0.55rem 0.65rem;
+  color: #dcebff;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.youtube-preview:hover span,
+.youtube-preview:focus-visible span {
+  color: #ffffff;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid #d9ecff;
+  color: #e9f4ff;
+  background: transparent;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: rgba(214, 236, 255, 0.12);
+  color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(214, 236, 255, 0.3) inset;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 1.3rem 0 2rem;
+  color: #cad7e7;
+}
+
+.site-footer p {
+  margin: 0.2rem 0;
+  font-size: 0.94rem;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 820px) {
+  .hero {
+    padding-top: 3.2rem;
+  }
+
+  .release-head {
+    grid-template-columns: 1fr;
+  }
+
+  .cover {
+    width: 100%;
+    height: auto;
+    max-height: 240px;
+  }
+
+  .embed-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .upcoming-layout {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .upcoming-cover {
+    width: 120px;
+    height: 120px;
+  }
+
+  .merch-grid {
+    grid-template-columns: 1fr;
+  }
+}
