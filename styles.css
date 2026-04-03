@@ -123,6 +123,13 @@ iframe {
   background: rgba(214, 236, 255, 0.08);
 }
 
+.hero-legal {
+  margin-top: 0.55rem;
+  max-width: 62ch;
+  color: #d6e5f8;
+  font-size: 0.92rem;
+}
+
 .evidence-strip {
   list-style: none;
   margin: 0 0 1.2rem;
@@ -441,7 +448,7 @@ iframe {
   .cover {
     width: 100%;
     height: auto;
-    max-height: 240px;
+    max-width: 260px;
   }
 
   .embed-grid {
